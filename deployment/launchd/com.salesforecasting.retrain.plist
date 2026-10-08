@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Label uniquely identifies the job within launchd -->
+    <key>Label</key>
+    <string>com.salesforecasting.retrain</string>
+
+    <!-- Execute the safe retraining wrapper script -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>__PROJECT_ROOT__/scripts/scheduled_retrain.sh</string>
+    </array>
+
+    <!-- Ensure working directory is set to project root -->
+    <key>WorkingDirectory</key>
+    <string>__PROJECT_ROOT__</string>
+
+    <!-- Schedule: Run daily at 02:00 local time -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>2</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- Redirect Standard Output and Error to logs/scheduler/ -->
+    <key>StandardOutPath</key>
+    <string>__PROJECT_ROOT__/logs/scheduler/retraining_stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>__PROJECT_ROOT__/logs/scheduler/retraining_stderr.log</string>
+
+    <!-- Run process with standard non-elevated permissions -->
+    <key>AbandonProcessGroup</key>
+    <true/>
+</dict>
+</plist>

@@ -1,0 +1,36 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Python bytecode and cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Git metadata
+.git/
+.gitignore
+
+# Secrets and local environment files
+.env
+
+# Logs and scratch files
+logs/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Scheduling & non-production deployment files
+deployment/
+
+# Raw incoming/archive datasets (processed parquet remains included if present)
+data/incoming/
+data/archive/
+
+# Archived candidate model backups
+models/archive/

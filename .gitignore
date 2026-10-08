@@ -1,0 +1,46 @@
+# Environment variables
+.env
+
+# Python cache & compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+
+# Model artifacts
+models/*.pkl
+models/*.joblib
+!models/.gitkeep
+
+# Logging output
+logs/*.log
+!logs/.gitkeep
+
+# Data files
+data/incoming/*.csv
+!data/incoming/.gitkeep
+data/processed/*.csv
+!data/processed/.gitkeep
+data/archive/*.csv
+!data/archive/.gitkeep
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Pytest cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE files
+.vscode/
+.idea/
+data/processed/*.parquet
+logs/scheduler/

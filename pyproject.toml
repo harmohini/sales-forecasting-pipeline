@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sales-forecasting-pipeline"
+version = "0.1.0"
+description = "End-to-End Sales Forecasting Pipeline with Automated Retraining"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Developer" }
+]
+dependencies = [
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "sqlalchemy",
+    "psycopg2-binary",
+    "python-dotenv",
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "joblib"
+]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
